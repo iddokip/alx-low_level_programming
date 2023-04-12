@@ -3,26 +3,29 @@
 
 /**
 * _strdup - returns a pointer to a newly allocated
-* @str:String to be copied
+*space in memory, which contains a copy of the
+*string given as a parameter.
+*@str:String to be copied
+*
 *Return: NULL in case of error, pointer to allocated
 *space
 */
 char *_strdup(char *str)
 {
-	char *icpy;
-	int indexx, lenn;
+	char *cpy;
+	int index, len;
 
 	if (str == NULL)
 		return (NULL);
-	for (indexx = 0; str[indexx]; indexx++)
-		lenn++;
-	icpy = malloc(sizeof(char) * (lenn + 1));
-	if (icpy == NULL)
+	for (index = 0; str[index]; index++)
+		len++;
+	cpy = malloc(sizeof(char) * (len + 1));
+	if (cpy == NULL)
 		return (NULL);
-	for (indexx = 0; str[indexx]; indexx++)
+	for (index = 0; str[index]; index++)
 	{
-		icpy[index] = str[indexx];
+		cpy[index] = str[index];
 	}
-	icpy[len] = '\0';
-	return (icpy);
+	cpy[len] = '\0';
+	return (cpy);
 }
